@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:id="@+id/login">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Header-->
+        <include layout="@layout/header"/>
+
+        <LinearLayout
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:gravity="center"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="5"
+                >
+
+                <include layout="@layout/login_form"/>
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/or"
+                android:padding="8dp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+
+        <!-- Lien pour créer un compte -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/new_user_msg" />
+
+                    <TextView
+                        android:id="@+id/buttonRegister"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/register"
+                        android:textAllCaps="true"
+                        android:textColor="@color/dark_blue"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="@dimen/margin_end"
+                        android:contentDescription="@string/continue_with_facebook"
+                        android:src="@drawable/ic_facebook" />
+
+                    <TextView
+                        android:id="@+id/facebook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/continue_with_facebook"
+                        android:textColor="@color/dark_blue"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

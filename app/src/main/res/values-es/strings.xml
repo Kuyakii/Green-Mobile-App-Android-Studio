@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PowerHome</string>
+    <string name="title_activity_login">Iniciar sesión</string>
+    <string name="title_activity_register">Registro</string>
+    <string name="title">Título</string>
+
+    <string name="register">Crear una cuenta</string>
+    <string name="sign_up">Identifícate</string>
+
+    <string name="firstname">Nombre</string>
+    <string name="lastname">Apellido</string>
+    <string name="mobile">Móvil</string>
+    <string name="prompt_password">Contraseña</string>
+
+    <string name="new_user_msg">¿Nuevo en Jumia?</string>
+    <string name="welcome">¡Bienvenido!</string>
+
+    <string name="invalid_username">Nombre de usuario</string>
+    <string name="invalid_password">La contraseña debe contener al menos 5 caracteres</string>
+    <string name="login_failed">No se pudo iniciar sesión</string>
+    <string name="invalid_email">Correo electrónico no válido</string>
+
+    <string name="or">O</string>
+    <string name="forgot_password">¿Olvidaste la contraseña?</string>
+    <string name="continue_with_facebook">Continuar con Facebook</string>
+    <string name="create_new_account">Crear una nueva cuenta</string>
+
+    <string name="error_firstname">El nombre debe contener entre 2 y 25 letras.</string>
+    <string name="error_lastname">El apellido debe contener entre 2 y 25 letras.</string>
+    <string name="error_email">Por favor, introduce un correo electrónico válido.</string>
+    <string name="error_password">La contraseña debe tener al menos 8 caracteres, incluyendo 1 letra, 1 número y 1 símbolo.</string>
+    <string name="error_phone">El número de teléfono debe contener al menos 8 dígitos.</string>
+
+    <string name="floor">Piso</string>
+    <string name="appliances">equipo</string>
+    <string name="appliance">equipo</string>
+    <string name="resident">Residente</string>
+</resources>
