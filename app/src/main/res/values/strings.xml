@@ -32,7 +32,7 @@
     <string name="error_email">Please enter a valid email.</string>
     <string name="error_password">Password must be at least 8 characters long, with 1 letter, 1 number, and 1 symbol.</string>
     <string name="error_phone">Phone number must contain at least 8 digits.</string>
-    <string name="learn_app" translatable="false">Learn App</string>
+    <string name="learn_app" translatable="false">LearnApp</string>
 
     <string name="floor">Floor</string>
     <string name="appliances">appliances</string>

@@ -45,7 +45,7 @@ public class HabitatActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Habitat habitat = habitats.get(position);
-                Toast.makeText(HabitatActivity.this, R.string.resident + " " + habitat.getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(HabitatActivity.this, getString(R.string.resident) + " " + habitat.getName(), Toast.LENGTH_SHORT).show();
             }
         });
     }

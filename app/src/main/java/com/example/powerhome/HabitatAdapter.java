@@ -52,14 +52,22 @@ public class HabitatAdapter extends BaseAdapter {
 
         Habitat habitat = habitats.get(position);
         nomTextView.setText(habitat.getName());
-        equipementsTextView.setText(habitat.getAppliances().size() + (habitat.getAppliances().size() > 1 ? " " + R.string.appliances : " " + R.string.appliance));
+
+        Context context = parent.getContext();
+        equipementsTextView.setText(habitat.getAppliances().size() +
+                (habitat.getAppliances().size() > 1 ? " " + context.getString(R.string.appliances) : " " + context.getString(R.string.appliance)));
+
         etageTextView.setText("" + habitat.getFloor());
 
         equipementsLayout.removeAllViews();
         for (Appliance appliance : habitat.getAppliances()) {
             ImageView imageView = new ImageView(context);
             imageView.setImageResource(appliance.getIcon());
-            imageView.setLayoutParams(new LinearLayout.LayoutParams(60, 60));
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(60, 50);
+            params.setMargins(0, 0, 10, 0);
+
+            imageView.setLayoutParams(params);
             equipementsLayout.addView(imageView);
         }
 
