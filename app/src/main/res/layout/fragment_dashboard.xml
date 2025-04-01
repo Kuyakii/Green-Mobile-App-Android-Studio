@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profil_background"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="24dp"
+        android:background="@drawable/reservation_item_background"
+        android:elevation="8dp">
+
+        <TextView
+            android:id="@+id/textCoins"
+            android:text="@string/no_eco_coins"
+            style="@style/TextView.Paimon"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/gold"
+            android:fontFamily="@font/lexend_bold"
+            android:layout_marginBottom="20dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBarEco"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="250dp"
+            android:layout_height="16dp"
+            android:progressDrawable="@drawable/progress_bar_gold"
+            android:max="100"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/textMessage"
+            android:text="@string/ellipsis"
+            style="@style/TextView.Paimon"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/lexend_regular" />
+    </LinearLayout>
+</ScrollView>

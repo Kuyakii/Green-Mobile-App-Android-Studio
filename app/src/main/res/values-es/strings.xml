@@ -1,39 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PowerHome</string>
-    <string name="title_activity_login">Iniciar sesión</string>
-    <string name="title_activity_register">Registro</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="title_activity_register">Registrarse</string>
     <string name="title">Título</string>
-
-    <string name="register">Crear una cuenta</string>
-    <string name="sign_up">Identifícate</string>
-
+    <string name="register">Registrarse</string>
+    <string name="sign_up">Crear cuenta</string>
     <string name="firstname">Nombre</string>
     <string name="lastname">Apellido</string>
-    <string name="mobile">Móvil</string>
-    <string name="prompt_password">Contraseña</string>
-
-    <string name="new_user_msg">¿Nuevo en Jumia?</string>
-    <string name="welcome">¡Bienvenido!</string>
-
-    <string name="invalid_username">Nombre de usuario</string>
-    <string name="invalid_password">La contraseña debe contener al menos 5 caracteres</string>
-    <string name="login_failed">No se pudo iniciar sesión</string>
-    <string name="invalid_email">Correo electrónico no válido</string>
-
+    <string name="mobile">Teléfono</string>
+    <string name="password">Contraseña</string>
+    <string name="new_user_msg">¿Nuevo en Paimon MOE?</string>
+    <string name="welcome">¡Bienvenido, Invocador!</string>
+    <string name="invalid_username">Nombre de usuario inválido</string>
+    <string name="invalid_password">La contraseña debe tener más de 5 caracteres</string>
+    <string name="login_failed">Error al iniciar sesión</string>
+    <string name="invalid_email">Correo electrónico inválido</string>
     <string name="or">O</string>
-    <string name="forgot_password">¿Olvidaste la contraseña?</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
     <string name="continue_with_facebook">Continuar con Facebook</string>
     <string name="create_new_account">Crear una nueva cuenta</string>
-
-    <string name="error_firstname">El nombre debe contener entre 2 y 25 letras.</string>
-    <string name="error_lastname">El apellido debe contener entre 2 y 25 letras.</string>
-    <string name="error_email">Por favor, introduce un correo electrónico válido.</string>
-    <string name="error_password">La contraseña debe tener al menos 8 caracteres, incluyendo 1 letra, 1 número y 1 símbolo.</string>
-    <string name="error_phone">El número de teléfono debe contener al menos 8 dígitos.</string>
-
+    <string name="error_firstname">El nombre debe tener entre 2 y 25 letras.</string>
+    <string name="error_lastname">El apellido debe tener entre 2 y 25 letras.</string>
+    <string name="error_email">Por favor ingrese un correo electrónico válido.</string>
+    <string name="error_password">La contraseña debe tener al menos 8 caracteres, 1 letra, 1 número y 1 símbolo.</string>
+    <string name="error_phone">El número de teléfono debe tener al menos 8 dígitos.</string>
     <string name="floor">Piso</string>
-    <string name="appliances">equipo</string>
-    <string name="appliance">equipo</string>
+    <string name="appliances">Equipos</string>
+    <string name="appliance">Equipo</string>
     <string name="resident">Residente</string>
+    <string name="habitats">Habitats</string>
+    <string name="settings">Ajustes</string>
+    <string name="open">Abrir</string>
+    <string name="close">Cerrar</string>
+    <string name="title_eco_master">🌳 ¡Maestro del Eco!</string>
+    <string name="title_green_protector">🌿 ¡Guardián Verde!</string>
+    <string name="title_eco_apprentice">🍃 Aprendiz Ecológico</string>
+    <string name="eco_coins">eco-coins</string>
+    <string name="habitat">Hábitat: </string>
+    <string name="updated_habitats">¡Hábitats actualizados!</string>
+    <string name="habitat_stage">Piso: </string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="confirm_logout">¿Seguro que quieres cerrar sesión?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="about_us_title">Acerca de Paimon MOE</string>
+    <string name="about_us_description">🌟 Paimon MOE v1.0\n\nUna aplicación diseñada para gestionar tu hábitat de forma inteligente y ecológica.\n\nDesarrollada con pasión por tu equipo estrella ⚡\n\n© 2025 - Todos los derechos reservados.</string>
+    <string name="register_success">¡Registro exitoso!</string>
+    <string name="fill_all_fields">Por favor, rellena todos los campos.</string>
+    <string name="date">Fecha</string>
+    <string name="hour">Hora</string>
+    <string name="no_eco_coins">0 eco-coins</string>
+    <string name="ellipsis">…</string>
+    <string name="reload">Actualizar</string>
+    <string name="profil_icon">Icono de perfil</string>
+    <string name="my_profile">✨ Mi Perfil ✨</string>
+    <string name="end_hour">🕓 Hora de fin</string>
+    <string name="format_hh_mm">HH:mm</string>
+    <string name="book_slot">¡Reservar mi franja!</string>
+    <string name="start_hour">🕐 Hora de inicio</string>
+    <string name="choose_your_slot">Elige tu franja mágica ✨</string>
+    <string name="reservation_logs">Reservas</string>
+    <string name="reservation_logs_title">Historial de Reservas</string>
+    <string name="icone">Icono</string>
+    <string name="my_profil">Mi Perfil</string>
+    <string name="dashboard">Panel de control</string>
+    <string name="my_habitats">Mis Hábitats</string>
+    <string name="calendar">Calendario</string>
+    <string name="book_a_slot">Reservar una franja</string>
+    <string name="about_us">Acerca de</string>
+    <string name="title_activity_main">Actividad Principal</string>
+    <string name="navigation_drawer_open">Abrir menú de navegación</string>
+    <string name="navigation_drawer_close">Cerrar menú de navegación</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Encabezado de navegación</string>
+    <string name="action_settings">Configuración</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Galería</string>
+    <string name="menu_slideshow">Presentación</string>
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string>
+
+    <string name="aaaa_mm_jj">AAAA-MM-DD</string>
+    <string name="hh_mm">HH:mm</string>
+    <string name="error">Error: </string>
+    <string name="no_habitats_for_resident">No se encontró ningún hábitat para este residente</string>
+
+    <string name="equipements">Equipos</string>
+    <string name="blue_flower">Flor Azul</string>
+    <string name="paimon_ring">Anillo de Paimon</string>
+    <string name="bottom_wave">Onda Inferior</string>
+
 </resources>

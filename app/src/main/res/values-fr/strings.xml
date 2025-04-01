@@ -1,39 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PowerHome</string>
-    <string name="title_activity_login">Connectez-vous</string>
-    <string name="title_activity_register">Créer un compte</string>
+    <string name="login">Connexion</string>
+    <string name="title_activity_register">Inscription</string>
     <string name="title">Titre</string>
-
-    <string name="register">Créer un compte</string>
-    <string name="sign_up">Identifiez-vous</string>
-
+    <string name="register">S\'inscrire</string>
+    <string name="sign_up">Créer un compte</string>
     <string name="firstname">Prénom</string>
     <string name="lastname">Nom</string>
-    <string name="mobile">Mobile</string>
-    <string name="prompt_password">Mot de Passe</string>
-
-    <string name="new_user_msg">Nouveau sur Jumia ? </string>
-    <string name="welcome">Bienvenue !</string>
-
-    <string name="invalid_username">Nom d\'utilisateur</string>
-    <string name="invalid_password">Le mot de passe doit contenir au moins 5 caractères</string>
-    <string name="login_failed">Connexion impossible</string>
-    <string name="invalid_email">Email invalide</string>
-
+    <string name="mobile">Téléphone</string>
+    <string name="password">Mot de passe</string>
+    <string name="new_user_msg">Nouveau sur Paimon MOE ?</string>
+    <string name="welcome">Bienvenue, Invocateur !</string>
+    <string name="invalid_username">Nom d\'utilisateur invalide</string>
+    <string name="invalid_password">Le mot de passe doit contenir plus de 5 caractères</string>
+    <string name="login_failed">Échec de la connexion</string>
+    <string name="invalid_email">Adresse e-mail invalide</string>
     <string name="or">OU</string>
-    <string name="forgot_password">Mot de Passe Oublié ?</string>
+    <string name="forgot_password">Mot de passe oublié ?</string>
     <string name="continue_with_facebook">Continuer avec Facebook</string>
     <string name="create_new_account">Créer un nouveau compte</string>
-
     <string name="error_firstname">Le prénom doit contenir entre 2 et 25 lettres.</string>
     <string name="error_lastname">Le nom doit contenir entre 2 et 25 lettres.</string>
-    <string name="error_email">Veuillez entrer un email valide.</string>
-    <string name="error_password">Le mot de passe doit contenir au moins 8 caractères, dont 1 lettre, 1 chiffre et 1 symbole.</string>
+    <string name="error_email">Veuillez entrer une adresse e-mail valide.</string>
+    <string name="error_password">Le mot de passe doit contenir au moins 8 caractères, 1 lettre, 1 chiffre et 1 symbole.</string>
     <string name="error_phone">Le numéro de téléphone doit contenir au moins 8 chiffres.</string>
-
     <string name="floor">Étage</string>
-    <string name="appliances">équipements</string>
-    <string name="appliance">équipement</string>
+    <string name="appliances">Équipements</string>
+    <string name="appliance">Équipement</string>
     <string name="resident">Résident</string>
+    <string name="habitats">Habitats</string>
+    <string name="settings">Paramètres</string>
+    <string name="open">Ouvrir</string>
+    <string name="close">Fermer</string>
+    <string name="title_eco_master">🌳 Maître de l\'Éco !</string>
+    <string name="title_green_protector">🌿 Gardien Vert !</string>
+    <string name="title_eco_apprentice">🍃 Apprenti Écolo</string>
+    <string name="eco_coins">éco-coins</string>
+    <string name="habitat">Habitat : </string>
+    <string name="updated_habitats">Habitats mis à jour !</string>
+    <string name="habitat_stage">Étage : </string>
+    <string name="logout">Déconnexion</string>
+    <string name="confirm_logout">Veux-tu vraiment te déconnecter ?</string>
+    <string name="cancel">Annuler</string>
+    <string name="about_us_title">À propos de Paimon MOE</string>
+    <string name="about_us_description">🌟 Paimon MOE v1.0\n\nUne application conçue pour une gestion intelligente et écoresponsable de votre habitat.\n\nDéveloppée avec passion par ton équipe de choc ⚡\n\n© 2025 - Tous droits réservés.</string>
+    <string name="register_success">Inscription réussie !</string>
+    <string name="fill_all_fields">Veuillez remplir tous les champs.</string>
+    <string name="date">Date</string>
+    <string name="hour">Heure</string>
+    <string name="no_eco_coins">0 éco-coins</string>
+    <string name="ellipsis">…</string>
+    <string name="reload">Actualiser</string>
+    <string name="profil_icon">Icône de profil</string>
+    <string name="my_profile">✨ Mon Profil ✨</string>
+    <string name="end_hour">🕓 Heure de fin</string>
+    <string name="format_hh_mm">HH:mm</string>
+    <string name="book_slot">Réserver mon créneau !</string>
+    <string name="start_hour">🕐 Heure de début</string>
+    <string name="choose_your_slot">Choisis ton créneau magique ✨</string>
+    <string name="reservation_logs">Historique</string>
+    <string name="reservation_logs_title">Historique des Réservations</string>
+    <string name="icone">Icône</string>
+    <string name="my_profil">Mon Profil</string>
+    <string name="dashboard">Tableau de bord</string>
+    <string name="my_habitats">Mes Habitats</string>
+    <string name="calendar">Calendrier</string>
+    <string name="book_a_slot">Réserver un créneau</string>
+    <string name="about_us">À propos</string>
+    <string name="title_activity_main">Activité Principale</string>
+    <string name="navigation_drawer_open">Ouvrir le menu de navigation</string>
+    <string name="navigation_drawer_close">Fermer le menu de navigation</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">En-tête de navigation</string>
+    <string name="action_settings">Paramètres</string>
+
+    <string name="menu_home">Accueil</string>
+    <string name="menu_gallery">Galerie</string>
+    <string name="menu_slideshow">Diaporama</string>
+    <string name="hello_blank_fragment">Bonjour fragment vide</string>
+
+    <string name="aaaa_mm_jj">AAAA-MM-JJ</string>
+    <string name="hh_mm">HH:mm</string>
+    <string name="error">Erreur : </string>
+    <string name="no_habitats_for_resident">Aucun habitat trouvé pour ce résident</string>
+
+    <string name="equipements">Équipements</string>
+    <string name="blue_flower">Fleur Bleue</string>
+    <string name="paimon_ring">Anneau de Paimon</string>
+    <string name="bottom_wave">Vague Inférieure</string>
+
 </resources>

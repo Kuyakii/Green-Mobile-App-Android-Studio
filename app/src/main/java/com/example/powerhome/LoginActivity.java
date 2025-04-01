@@ -14,6 +14,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+import com.android.volley.toolbox.JsonObjectRequest;
+import org.json.JSONObject;
+import org.json.JSONException;
+
 
 public class LoginActivity extends AppCompatActivity {
     private EditText editTextEmail, editTextPassword;
@@ -29,9 +36,6 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
-        TextView titleTextView = findViewById(R.id.headerTitle);
-        titleTextView.setText(R.string.title_activity_login);
-
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         Button buttonLogin = findViewById(R.id.buttonLogin);
@@ -44,13 +48,10 @@ public class LoginActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString().trim();
 
                 // Vérification des identifiants
-                if (email.equals("abcd") && password.equals("EFGH")) {
-                    Intent intent = new Intent(LoginActivity.this, HabitatActivity.class);
-                    intent.putExtra("email", email);
-                    intent.putExtra("password", password);
-                    startActivity(intent);
+                if (!email.isEmpty() && !password.isEmpty()) {
+                    loginUser(email, password);
                 } else {
-                    Toast.makeText(LoginActivity.this, R.string.invalid_email, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -63,6 +64,54 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.buttonLogin).setAlpha(0f);
+        findViewById(R.id.buttonLogin).animate().alpha(1f).setDuration(600).start();
+    }
+
+    private void loginUser(String email, String password) {
+        String url = SessionManager.HOST + "/www/login.php";
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        JSONObject data = new JSONObject();
+        try {
+            data.put("email", email);
+            data.put("mot_de_passe", password);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, data,
+                response -> {
+                    try {
+                        if (response.getBoolean("success")) {
+                            JSONObject user = response.getJSONObject("resident");
+                            String nom = user.getString("nom");
+                            String prenom = user.getString("prenom");
+
+                            Toast.makeText(getApplicationContext(), "Bienvenue " + nom, Toast.LENGTH_SHORT).show();
+
+                            int idResident = user.getInt("id_resident");
+
+                            SessionManager session = new SessionManager(getApplicationContext());
+                            session.createLoginSession(idResident, nom,prenom, email);
+
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("idResident", idResident);
+                            startActivity(intent);
+                            finish();
+
+                        } else {
+                            Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                },
+                error -> Toast.makeText(getApplicationContext(), getString(R.string.error)+ error.getMessage(), Toast.LENGTH_SHORT).show()
+        );
+
+        queue.add(request);
     }
 
 }

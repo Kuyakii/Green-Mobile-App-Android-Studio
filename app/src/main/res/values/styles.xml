@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="android:background">#0D1B2A</item>
+        <item name="android:textColorPrimary">#FFE974</item>
+        <item name="android:fontFamily">@font/lexend_regular</item>
+    </style>
+</resources>

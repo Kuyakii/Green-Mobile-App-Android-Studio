@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
+    android:background="@drawable/reservation_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="50dp"
+        android:background="@drawable/edittext_background"
+        >
+
+        <TextView
+            android:text="@string/choose_your_slot"
+            style="@style/TextView.Paimon"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <TextView android:text="@string/habitat"
+            android:id="@+id/textHabitatRes"
+            android:textStyle="bold"
+            style="@style/TextView.Paimon"
+            android:layout_marginBottom="4dp" />
+        <Spinner
+            android:id="@+id/spinnerHabitat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/white"
+            />
+
+        <TextView android:text="@string/equipements"
+            android:id="@+id/textEquipementRes"
+            android:textStyle="bold"
+            style="@style/TextView.Paimon"
+            android:layout_marginBottom="4dp" />
+        <Spinner
+            android:id="@+id/spinnerEquipement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="20dp"
+            android:textColor="@android:color/white" />
+
+        <TextView android:text="@string/date"
+            style="@style/TextView.Paimon"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+        <EditText
+            android:id="@+id/editDate"
+            android:autofillHints=""
+            android:hint="@string/aaaa_mm_jj"
+            style="@style/EditText.Paimon"
+            android:focusable="false"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            android:inputType="date" />
+
+        <TextView android:text="@string/start_hour"
+            style="@style/TextView.Paimon"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+        <EditText
+            android:id="@+id/editHeureDebut"
+            android:autofillHints=""
+            android:hint="@string/hh_mm"
+            android:layout_marginHorizontal="20dp"
+            style="@style/EditText.Paimon"
+            android:focusable="false"
+            android:layout_marginBottom="16dp"
+            android:inputType="time" />
+
+        <TextView android:text="@string/end_hour"
+            style="@style/TextView.Paimon"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+        <EditText
+            android:id="@+id/editHeureFin"
+            android:autofillHints=""
+            android:hint="@string/format_hh_mm"
+            android:layout_marginHorizontal="20dp"
+            style="@style/EditText.Paimon"
+            android:focusable="false"
+            android:layout_marginBottom="24dp"
+            android:inputType="time" />
+
+        <Button
+            android:id="@+id/buttonReserver"
+            android:text="@string/book_slot"
+            style="@style/Button.Paimon" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    tools:background="@drawable/drawer_background"
+    android:gravity="bottom">
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_profile_magic"
+        android:contentDescription="@string/icone"
+        app:tint="#FFD700" />
+
+    <TextView
+        android:id="@+id/nav_header_username"
+        android:text="@string/welcome"
+        style="@style/TextView.Paimon"
+        android:textColor="@color/gold"
+        android:textSize="20sp"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/lexend_bold"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>

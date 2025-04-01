@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_profil"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="@string/my_profil" />
+    <item
+        android:id="@+id/nav_dashboard"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="@string/dashboard" />
+    <item
+        android:id="@+id/nav_habitats"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="@string/my_habitats" />
+    <item
+        android:id="@+id/nav_calendrier"
+        android:icon="@android:drawable/ic_menu_month"
+        android:title="@string/calendar" />
+    <item
+        android:id="@+id/nav_reservation"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/book_a_slot" />
+    <item
+        android:id="@+id/nav_historique"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="@string/reservation_logs_title" />
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:title="@string/logout" />
+    <item
+        android:id="@+id/nav_aboutus"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="@string/about_us" />
+
+</menu>

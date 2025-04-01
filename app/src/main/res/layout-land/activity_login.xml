@@ -1,125 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:id="@+id/login">
-
+    android:baselineAligned="false"
+    android:id="@+id/login"
+    android:orientation="horizontal"
+    android:background="@drawable/login_background"
+    android:padding="24dp">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <!--Header-->
-        <include layout="@layout/header"/>
-
-        <LinearLayout
-            android:baselineAligned="false"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:gravity="center"
-            >
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+        <!-- Partie formulaire -->
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fillViewport="true"
+            tools:ignore="NestedScrolling">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="5"
-                >
+                android:gravity="center"
+                android:padding="16dp">
 
-                <include layout="@layout/login_form"/>
+                <TextView
+                    android:id="@+id/headerTitle"
+                    style="@style/TextView.Paimon.Title"
+                    android:text="@string/login"
+                    android:layout_marginBottom="32dp" />
+
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    style="@style/EditText.Paimon"
+                    android:autofillHints=""
+                    android:hint="@string/email"
+                    android:drawableStart="@drawable/ic_email_standard"
+                    android:drawablePadding="12dp"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginBottom="20dp" />
+
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    style="@style/EditText.Paimon"
+                    android:autofillHints=""
+                    android:hint="@string/password"
+                    android:drawableStart="@drawable/ic_padlock"
+                    android:drawablePadding="12dp"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    style="@style/TextView.Paimon"
+                    android:text="@string/forgot_password"
+                    android:textColor="#ACF9FF"
+                    android:textStyle="italic"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="24dp" />
+
+                <Button
+                    android:id="@+id/buttonLogin"
+                    style="@style/Button.Paimon"
+                    android:text="@string/login"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="24dp" />
             </LinearLayout>
+        </ScrollView>
 
-
+        <!-- Séparateur -->
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginHorizontal="12dp">
 
             <View
                 android:layout_width="1dp"
-                android:layout_height="0dp"
-                android:layout_weight="5"
+                android:layout_height="100dp"
                 android:background="@android:color/darker_gray" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/TextView.Paimon"
                 android:text="@string/or"
-                android:padding="8dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:padding="12dp"
+                android:textColor="@color/white" />
 
             <View
                 android:layout_width="1dp"
-                android:layout_height="0dp"
-                android:layout_weight="6"
+                android:layout_height="100dp"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
 
+        <!-- Partie droite (register + Facebook) -->
+        <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="bottom">
 
-        <!-- Lien pour créer un compte -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="7"
-                android:gravity="center"
-                android:orientation="vertical">
+            <TextView
+                style="@style/TextView.Paimon"
+                android:text="@string/new_user_msg"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+            <TextView
+                android:id="@+id/buttonRegister"
+                style="@style/TextView.Paimon"
+                android:text="@string/register"
+                android:textColor="@color/light_blue"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/new_user_msg" />
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/facebook_button_background"
+            android:padding="12dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp">
 
-                    <TextView
-                        android:id="@+id/buttonRegister"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:text="@string/register"
-                        android:textAllCaps="true"
-                        android:textColor="@color/dark_blue"
-                        android:textStyle="bold" />
-                </LinearLayout>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_facebook_white"
+                android:contentDescription="@string/continue_with_facebook" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginEnd="@dimen/margin_end"
-                        android:contentDescription="@string/continue_with_facebook"
-                        android:src="@drawable/ic_facebook" />
-
-                    <TextView
-                        android:id="@+id/facebook"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/continue_with_facebook"
-                        android:textColor="@color/dark_blue"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-
+            <TextView
+                style="@style/TextView.Paimon"
+                android:id="@+id/facebook"
+                android:text="@string/continue_with_facebook"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                />
 
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:contentDescription="@string/paimon_singing"
+            app:srcCompat="@drawable/paimon_singing" />
+    </LinearLayout>
     </LinearLayout>
 </ScrollView>

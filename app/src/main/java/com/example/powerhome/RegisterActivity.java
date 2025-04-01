@@ -1,24 +1,35 @@
 package com.example.powerhome;
 
-import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
+import android.util.TypedValue;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.regex.Pattern;
+import java.util.Arrays;
+import java.util.List;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONObject;
+import org.json.JSONException;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText firstName, lastName, email, password, phone;
+    private EditText editFirstName, editLastName, editEmail, editPassword, editPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,77 +45,87 @@ public class RegisterActivity extends AppCompatActivity {
         titleTextView.setText(R.string.title_activity_register);
 
         // Initialisation des vues
-        firstName = findViewById(R.id.firstName);
-        lastName = findViewById(R.id.lastName);
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        phone = findViewById(R.id.phone);
-
+        editFirstName = findViewById(R.id.firstName);
+        editLastName = findViewById(R.id.lastName);
+        editEmail = findViewById(R.id.email);
+        editPassword = findViewById(R.id.password);
+        editPhone = findViewById(R.id.phone);
+        List<EditText> editTextList = Arrays.asList(editFirstName, editLastName, editEmail, editPassword);
         Button signUpButton = findViewById(R.id.signUpButton);
-        ImageView backButton = findViewById(R.id.backButton);
 
         // Bouton d'inscription
-        signUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (validateInputs()) {
-                    Toast.makeText(RegisterActivity.this, "Inscription réussie !", Toast.LENGTH_SHORT).show();
-                }
+        signUpButton.setOnClickListener(v -> {
+            String nom = editFirstName.getText().toString().trim();
+            String prenom = editLastName.getText().toString().trim();
+            String email = editEmail.getText().toString().trim();
+            String motDePasse = editPassword.getText().toString().trim();
+            String tel = editPhone.getText().toString().trim();
+            if (!nom.isEmpty() && !prenom.isEmpty() && !email.isEmpty() && !motDePasse.isEmpty()) {
+                registerUser(nom, prenom, email, motDePasse, tel);
+            } else {
+                Toast.makeText(this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show();
             }
         });
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(intent);
+        Drawable firstname_icon = ContextCompat.getDrawable(this, R.drawable.ic_mini_paimon);
+        Drawable lastname_icon = ContextCompat.getDrawable(this, R.drawable.emote_paimon_meme);
+        Drawable email_icon = ContextCompat.getDrawable(this, R.drawable.ic_email);
+        Drawable password_icon = ContextCompat.getDrawable(this, R.drawable.ic_artifact);
+        List<Drawable> input_drawables = Arrays.asList(firstname_icon, lastname_icon, email_icon, password_icon);
+        int sizeInDp = (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, 34, getResources().getDisplayMetrics());
+        for (int i = 0; i < input_drawables.size(); ++i) {
+            Drawable drawable = input_drawables.get(i);
+            if (drawable != null) {
+                drawable.setBounds(0, 0, sizeInDp, sizeInDp);
+                editTextList.get(i).setCompoundDrawables(drawable, null, null, null);
+                editTextList.get(i).setCompoundDrawablePadding(30);
             }
-        });
+        }
+
+        Spinner spinner = findViewById(R.id.countryCodeSpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.country_codes,
+                R.layout.country_code_spinner_item
+        );
+        adapter.setDropDownViewResource(R.layout.country_code_spinner);
+        spinner.setAdapter(adapter);
+
     }
+    private void registerUser(String nom, String prenom, String email, String motDePasse, String tel) {
+        String url = SessionManager.HOST + "/www/register.php";
 
-    private boolean validateInputs() {
-        String firstNameInput = firstName.getText().toString().trim();
-        String lastNameInput = lastName.getText().toString().trim();
-        String emailInput = email.getText().toString().trim();
-        String passwordInput = password.getText().toString().trim();
-        String phoneInput = phone.getText().toString().trim();
+        RequestQueue queue = Volley.newRequestQueue(this);
 
-        // Regex pour le prénom et nom (2 à 25 lettres alphabétiques uniquement)
-        Pattern namePattern = Pattern.compile("^[A-Za-zÀ-ÿ]{2,25}$");
-
-        // Regex pour l'email (format standard)
-        Pattern emailPattern = Pattern.compile("^[\\w.-]+@[a-zA-Z\\d.-]+\\.[a-zA-Z]{2,}$");
-
-        // Regex pour le mot de passe (min 8 caractères, 1 lettre, 1 chiffre, 1 symbole)
-        Pattern passwordPattern = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
-
-        // Vérification des champs
-        if (!namePattern.matcher(firstNameInput).matches()) {
-            firstName.setError(getString(R.string.error_firstname));
-            return false;
+        JSONObject data = new JSONObject();
+        try {
+            data.put("nom", nom);
+            data.put("prenom", prenom);
+            data.put("email", email);
+            data.put("mot_de_passe", motDePasse);
+            data.put("telephone", editPhone);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
-        if (!namePattern.matcher(lastNameInput).matches()) {
-            lastName.setError(getString(R.string.error_lastname));
-            return false;
-        }
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, data,
+                response -> {
+                    try {
+                        if (response.getBoolean("success")) {
+                            Toast.makeText(getApplicationContext(), getString(R.string.register_success), Toast.LENGTH_SHORT).show();
+                            finish();
+                        } else {
+                            Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                },
+                error -> Toast.makeText(getApplicationContext(), getString(R.string.error) + error.getMessage(), Toast.LENGTH_SHORT).show()
+        );
 
-        if (!emailPattern.matcher(emailInput).matches()) {
-            email.setError(getString(R.string.error_email));
-            return false;
-        }
-
-        if (!passwordPattern.matcher(passwordInput).matches()) {
-            password.setError(getString(R.string.error_password));
-            return false;
-        }
-
-        if (phoneInput.length() < 8 || !phoneInput.matches("\\d+")) {
-            phone.setError(getString(R.string.error_phone));
-            return false;
-        }
-
-        return true;
+        queue.add(request);
     }
 
 }

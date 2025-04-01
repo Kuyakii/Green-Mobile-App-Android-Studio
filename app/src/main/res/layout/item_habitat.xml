@@ -1,88 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:baselineAligned="false"
-    android:orientation="horizontal"
-    android:paddingHorizontal="16dp"
-    android:paddingVertical="12dp"
-    android:background="@drawable/box_shadow"
-    >
+    android:orientation="vertical"
+    android:background="@drawable/habitat_card"
+    android:layout_margin="12dp"
+    android:padding="14dp"
+    android:elevation="6dp">
 
+    <!-- En-tête : Titre + étage -->
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="2">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/habitat_item_header"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="10dp">
+
         <TextView
-            android:id="@+id/nomResident"
+            android:id="@+id/textHabitatNom"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="@color/genshin_primary_dark"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:fontFamily="@font/lexend_bold" />
+
+        <TextView
+            android:id="@+id/textEtage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="@color/black"
+            android:background="@drawable/habitat_item_etage"
+            android:padding="6dp"
+            android:textColor="#26A69A"
+            android:textSize="13sp"
+            android:fontFamily="@font/lexend_bold"
+            android:layout_marginStart="8dp"
             />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/nbEquipements"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="8dp"
-                android:textStyle="bold"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="12sp" />
-
-            <LinearLayout
-                android:id="@+id/equipementsLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:orientation="horizontal" />
-        </LinearLayout>
     </LinearLayout>
 
+    <!-- Bloc équipements -->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/habitat_item_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textEquipements"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/border_background"
-            android:paddingVertical="3dp"
-            android:paddingStart="6dp"
-            android:paddingEnd="4dp"
-            tools:ignore="UselessParent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/floor"
-                android:textAllCaps="true"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/etage"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_marginStart="2dp"
-                android:paddingVertical="2dp"
-                android:paddingHorizontal="8dp"
-                android:textColor="@android:color/white"
-                android:background="@drawable/border_green_background"
-                />
-        </LinearLayout>
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/lexend_regular" />
     </LinearLayout>
-
 </LinearLayout>

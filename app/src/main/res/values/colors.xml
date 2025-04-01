@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="base">#FAFAFA</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="base">#25294A</color>
     <color name="green">#0A990B</color>
     <color name="dark_blue">#3B6A97</color>
     <color name="gray">#999999</color>
     <color name="dark_gray">#808080</color>
+    <color name="light_blue">#AAD4FF</color>
+    <color name="facebook_blue">#1877F2</color>
+    <color name="login_blue">#5F7BFF</color>
+    <color name="hint_text">#DDF0F8FF</color>
+    <color name="background_translucent">#33FFFFFF</color>
+
+    <color name="genshin_text">#2D3A4A</color>
+    <color name="genshin_gold">#FAD689</color>
+    <color name="genshin_magic">#9C6ADE</color>
+
+    <!-- Palette Genshin-like -->
+
+    <color name="genshin_primary">#91C9F7</color>
+    <color name="genshin_accent">#71D6D1</color>
+    <color name="genshin_primary_dark">#5A80C0</color>
+    <color name="genshin_background">#F1F5FA</color>
+    <color name="genshin_card_stroke">#CCE7FF</color>
+    <color name="genshin_text_primary">#1A237E</color>
+    <color name="genshin_text_secondary">#4EBAED</color>
+
+    <color name="genshin_toolbar_background">#290C1E</color>
 </resources>

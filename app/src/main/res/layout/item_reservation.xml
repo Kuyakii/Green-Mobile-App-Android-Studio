@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/reservation_item_background">
+
+    <TextView
+        android:id="@+id/textEquipement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⚙️ Équipement : Catalyseur Primaire"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:fontFamily="@font/lexend_bold"
+        android:layout_marginBottom="6dp" />
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📅 Date : 2025-03-31"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:fontFamily="@font/lexend_regular"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/textHeure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⏳ Heure : 16:55"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:fontFamily="@font/lexend_regular" />
+</LinearLayout>

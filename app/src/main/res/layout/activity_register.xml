@@ -1,120 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/register"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@android:color/white"
-    android:id="@+id/register">
-
-    <include layout="@layout/header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"/>
+    android:fillViewport="true"
+    android:background="@drawable/login_background"
+    android:padding="30dp">
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp" >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginHorizontal="46dp"
+        android:layout_gravity="center">
+
         <TextView
+            android:id="@+id/headerTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/create_new_account"
-            android:textSize="16sp"
-            android:layout_marginBottom="30dp"            />
-        <!-- Champ Prénom -->
+            android:text="@string/title_activity_register"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/lexend_regular"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="32dp" />
 
-        <!-- Champ Nom -->
         <EditText
             android:id="@+id/firstName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/firstname"
-            android:inputType="textPersonName"
-            android:layout_marginBottom="30dp"
+            style="@style/EditText.Paimon"
             android:autofillHints=""
-            android:background="@android:drawable/editbox_background"
-            android:drawableStart="@android:drawable/ic_menu_myplaces"
-            android:padding="10dp" />
+            android:hint="@string/firstname"
+            android:layout_marginBottom="40dp"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/lastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/lastname"
-            android:inputType="textPersonName"
+            style="@style/EditText.Paimon"
             android:autofillHints=""
-            android:padding="15dp"
-            android:layout_marginBottom="30dp"
-            android:background="@android:drawable/editbox_background"
-            />
+            android:hint="@string/lastname"
+            android:layout_marginBottom="40dp"
+            android:inputType="textPersonName" />
 
-        <!-- Champ E-mail -->
         <EditText
             android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/prompt_email"
-            android:inputType="textEmailAddress"
+            style="@style/EditText.Paimon"
+            android:hint="@string/email"
             android:autofillHints=""
-            android:drawableStart="@android:drawable/ic_dialog_email"
-            android:padding="10dp"
-            android:layout_marginBottom="30dp"
-            android:background="@android:drawable/editbox_background"
-            />
+            android:layout_marginBottom="40dp"
+            android:inputType="textEmailAddress" />
 
-        <!-- Champ Mot de passe -->
         <EditText
             android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/prompt_password"
-            android:inputType="textPassword"
+            style="@style/EditText.Paimon"
+            android:hint="@string/password"
             android:autofillHints=""
-            android:drawableStart="@android:drawable/ic_lock_lock"
-            android:padding="10dp"
-            android:background="@android:drawable/editbox_background"
-            android:layout_marginBottom="30dp" />
+            android:inputType="textPassword"
+            android:layout_marginBottom="40dp" />
 
-        <!-- Champ Numéro de téléphone -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:minHeight="48dp"
-            android:layout_marginBottom="30dp"            >
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/edittext_background"
+            android:padding="10dp"
+            android:gravity="center_vertical">
 
             <Spinner
+                android:id="@+id/countryCodeSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="8dp"
-                android:drawableStart="@android:drawable/stat_sys_phone_call"
+                android:layout_height="wrap_content"
                 android:entries="@array/country_codes"
+                android:spinnerMode="dropdown"
+                android:layout_marginEnd="8dp"
+                android:popupBackground="@drawable/spinner_background"
                 />
 
             <EditText
                 android:id="@+id/phone"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autofillHints=""
                 android:hint="@string/mobile"
                 android:inputType="phone"
-                android:autofillHints=""
-                android:background="@android:drawable/editbox_background"
-                android:padding="10dp"
-                />
+                android:background="@android:color/transparent"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/lexend_regular"/>
         </LinearLayout>
 
-        <!-- Bouton de validation -->
+
         <Button
             android:id="@+id/signUpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/register"
+            android:fontFamily="@font/lexend_bold"
+            android:textSize="16sp"
+            android:textAllCaps="true"
             android:textColor="@android:color/white"
-            android:background="@drawable/button_rect"
-            android:layout_marginTop="16dp"
-            />
+            android:background="@drawable/login_button_background"
+            android:paddingVertical="16dp" />
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>

@@ -1,76 +1,90 @@
-// HabitatAdapter.java
 package com.example.powerhome;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
+public class HabitatAdapter extends RecyclerView.Adapter<HabitatAdapter.HabitatViewHolder> {
 
-public class HabitatAdapter extends BaseAdapter {
-    private final Context context;
-    private final List<Habitat> habitats;
-    private final LayoutInflater inflater;
+    private final List<Habitat> habitatList;
 
-    public HabitatAdapter(Context context, List<Habitat> habitats) {
-        this.context = context;
-        this.habitats = habitats;
-        this.inflater = LayoutInflater.from(context);
+    public HabitatAdapter(List<Habitat> habitatList) {
+        this.habitatList = habitatList;
     }
 
-    @Override
-    public int getCount() {
-        return habitats.size();
+    public static class HabitatViewHolder extends RecyclerView.ViewHolder {
+        TextView textHabitatNom, textEquipements, textEtage;
+
+        public HabitatViewHolder(View itemView) {
+            super(itemView);
+            textHabitatNom = itemView.findViewById(R.id.textHabitatNom);
+            textEquipements = itemView.findViewById(R.id.textEquipements);
+            textEtage = itemView.findViewById(R.id.textEtage);
+        }
     }
 
+    @NonNull
     @Override
-    public Object getItem(int position) {
-        return habitats.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
+    public HabitatViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_habitat, parent, false);
+        return new HabitatViewHolder(v);
     }
 
     @SuppressLint("SetTextI18n")
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = inflater.inflate(R.layout.item_habitat, parent, false);
+    public void onBindViewHolder(HabitatViewHolder holder, int position) {
+        Habitat habitat = habitatList.get(position);
+
+        holder.textHabitatNom.setText(
+                holder.itemView.getContext().getString(R.string.habitat) + " " + habitat.habitat_nom
+        );
+        @SuppressLint("UseCompatLoadingForDrawables")
+        Drawable icHome = holder.textHabitatNom.getContext().getDrawable(R.drawable.ic_home);
+        if (icHome != null) {
+            int size = (int) TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, 24, holder.itemView.getResources().getDisplayMetrics()
+            );
+            icHome.setBounds(0, 0, size, size);
+            holder.textHabitatNom.setCompoundDrawables(icHome, null, null, null);
+            holder.textHabitatNom.setCompoundDrawablePadding(20);
         }
 
-        TextView nomTextView = convertView.findViewById(R.id.nomResident);
-        TextView equipementsTextView = convertView.findViewById(R.id.nbEquipements);
-        TextView etageTextView = convertView.findViewById(R.id.etage);
-        LinearLayout equipementsLayout = convertView.findViewById(R.id.equipementsLayout);
-
-        Habitat habitat = habitats.get(position);
-        nomTextView.setText(habitat.getName());
-
-        Context context = parent.getContext();
-        equipementsTextView.setText(habitat.getAppliances().size() +
-                (habitat.getAppliances().size() > 1 ? " " + context.getString(R.string.appliances) : " " + context.getString(R.string.appliance)));
-
-        etageTextView.setText("" + habitat.getFloor());
-
-        equipementsLayout.removeAllViews();
-        for (Appliance appliance : habitat.getAppliances()) {
-            ImageView imageView = new ImageView(context);
-            imageView.setImageResource(appliance.getIcon());
-
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(60, 50);
-            params.setMargins(0, 0, 10, 0);
-
-            imageView.setLayoutParams(params);
-            equipementsLayout.addView(imageView);
+        StringBuilder equipementsStr = new StringBuilder();
+        for (Equipement eq : habitat.equipements) {
+            equipementsStr
+                    .append(eq.nom)
+                    .append(" (")
+                    .append(eq.consommation_watt)
+                    .append("W, ")
+                    .append(eq.etat)
+                    .append(")\n");
         }
 
-        return convertView;
+        holder.textEquipements.setText(equipementsStr.toString().trim());
+        @SuppressLint("UseCompatLoadingForDrawables")
+        Drawable icTool = holder.textEquipements.getContext().getDrawable(R.drawable.ic_tool);
+        if (icTool != null) {
+            int size = (int) TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, 20, holder.itemView.getResources().getDisplayMetrics()
+            );
+            icTool.setBounds(0, 0, size, size);
+            holder.textEquipements.setCompoundDrawables(icTool, null, null, null);
+            holder.textEquipements.setCompoundDrawablePadding(20);
+        }
+
+        holder.textEtage.setText(R.string.habitat_stage + habitat.etage);
+    }
+
+    @Override
+    public int getItemCount() {
+        return habitatList.size();
     }
 }

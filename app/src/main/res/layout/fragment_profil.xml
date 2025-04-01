@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/profil_background"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="32dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@android:color/transparent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/reservation_item_background"
+                android:padding="24dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/ic_profile_magic"
+                    android:contentDescription="@string/profil_icon" />
+
+                <TextView
+                    android:text="@string/my_profile"
+                    android:textSize="26sp"
+                    style="@style/TextView.Paimon"
+                    android:fontFamily="@font/lexend_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="24dp"
+                    android:textColor="@color/white"/>
+
+                <!-- Nom -->
+                <TextView
+                    android:text="@string/lastname"
+                    style="@style/TextView.Paimon"
+                    android:textColor="@color/gold"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/textNom"
+                    style="@style/TextView.Paimon"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Prénom -->
+                <TextView
+                    android:text="@string/firstname"
+                    style="@style/TextView.Paimon"
+                    android:textColor="@color/gold"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/textPrenom"
+                    style="@style/TextView.Paimon"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Email -->
+                <TextView
+                    android:text="@string/email"
+                    style="@style/TextView.Paimon"
+                    android:textColor="@color/gold"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/textEmail"
+                    style="@style/TextView.Paimon"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="8dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

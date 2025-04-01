@@ -5,4 +5,5 @@
     <dimen name="margin_bottom_small">12dp</dimen>
     <dimen name="margin_bottom_xsmall">24dp</dimen>
     <dimen name="margin_end">8dp</dimen>
+    <dimen name="fab_margin">48dp</dimen>
 </resources>
