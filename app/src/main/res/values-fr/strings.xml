@@ -89,5 +89,6 @@
     <string name="blue_flower">Fleur Bleue</string>
     <string name="paimon_ring">Anneau de Paimon</string>
     <string name="bottom_wave">Vague Inférieure</string>
+    <string name="already_have_account">Vous avez déjà un compte ?</string>
 
 </resources>

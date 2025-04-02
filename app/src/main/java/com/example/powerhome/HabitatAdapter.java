@@ -80,7 +80,7 @@ public class HabitatAdapter extends RecyclerView.Adapter<HabitatAdapter.HabitatV
             holder.textEquipements.setCompoundDrawablePadding(20);
         }
 
-        holder.textEtage.setText(R.string.habitat_stage + habitat.etage);
+        holder.textEtage.setText(holder.textEtage.getContext().getString(R.string.habitat_stage) + " " + habitat.etage);
     }
 
     @Override

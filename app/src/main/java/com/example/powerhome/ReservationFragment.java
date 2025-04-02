@@ -187,7 +187,6 @@ public class ReservationFragment extends Fragment {
                             String message = response.getString("message");
                             Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
 
-                            // ✅ Nouveau solde eco-coin
                             if (response.has("eco_coin")) {
                                 int coins = response.getInt("eco_coin");
                                 session.setEcoCoins(coins);

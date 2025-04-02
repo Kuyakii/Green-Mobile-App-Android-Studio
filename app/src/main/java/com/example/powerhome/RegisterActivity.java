@@ -1,5 +1,6 @@
 package com.example.powerhome;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -92,6 +93,11 @@ public class RegisterActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(R.layout.country_code_spinner);
         spinner.setAdapter(adapter);
 
+        TextView buttonLogin = findViewById(R.id.buttonLogin);
+        buttonLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
     }
     private void registerUser(String nom, String prenom, String email, String motDePasse, String tel) {
         String url = SessionManager.HOST + "/www/register.php";
@@ -104,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
             data.put("prenom", prenom);
             data.put("email", email);
             data.put("mot_de_passe", motDePasse);
-            data.put("telephone", editPhone);
+            data.put("telephone", tel);
         } catch (JSONException e) {
             e.printStackTrace();
         }

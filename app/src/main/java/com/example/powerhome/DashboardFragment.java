@@ -12,6 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class DashboardFragment extends Fragment {
     private TextView textCoins, textMessage;
@@ -34,15 +42,37 @@ public class DashboardFragment extends Fragment {
     @SuppressLint("SetTextI18n")
     private void loadEcoCoins() {
         SessionManager session = new SessionManager(requireContext());
-        int localCoins = session.getEcoCoins();
-        textCoins.setText(localCoins +" "+ getString(R.string.eco_coins));
-        progressBar.setProgress(localCoins % 100);
-        if (localCoins >= 200) {
-            textMessage.setText(R.string.title_eco_master);
-        } else if (localCoins >= 100) {
-            textMessage.setText(R.string.title_green_protector);
-        } else {
-            textMessage.setText(R.string.title_eco_apprentice);
-        }
+        int id = session.getId();
+        String url = "http://192.168.1.134/www/getResident.php?id=" + id;
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                response -> {
+                    try {
+                        JSONObject resident = response.getJSONObject("resident");
+                        int coins = resident.getInt("eco_coin");
+
+                        textCoins.setText(coins + " " + getString(R.string.eco_coins));
+                        progressBar.setProgress(coins % 100);
+
+                        if (coins >= 200) {
+                            textMessage.setText(R.string.title_eco_master);
+                        } else if (coins >= 100) {
+                            textMessage.setText(R.string.title_green_protector);
+                        } else {
+                            textMessage.setText(R.string.title_eco_apprentice);
+                        }
+
+                        session.setEcoCoins(coins);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Toast.makeText(getContext(), "Erreur de données", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> Toast.makeText(getContext(), "Erreur réseau : " + error.getMessage(), Toast.LENGTH_SHORT).show()
+        );
+
+        Volley.newRequestQueue(requireContext()).add(request);
     }
+
 }

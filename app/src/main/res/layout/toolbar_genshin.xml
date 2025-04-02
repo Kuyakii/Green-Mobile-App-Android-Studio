@@ -4,18 +4,15 @@
     style="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/genshin_toolbar_background"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <View
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:adjustViewBounds="true"
         android:background="@drawable/toolbar_background" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 </FrameLayout>

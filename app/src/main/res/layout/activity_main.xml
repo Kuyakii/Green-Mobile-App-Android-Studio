@@ -11,8 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <include layout="@layout/toolbar_genshin" />
 
-       <include layout="@layout/toolbar_genshin" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/gold" />
 
         <FrameLayout
             android:id="@+id/fragment_container"
@@ -31,6 +35,7 @@
         app:itemIconTint="@color/gold"
         app:itemTextColor="@color/gold"
         app:itemIconSize="40dp"
-        android:background="@drawable/drawer_background"/>
+        android:background="@drawable/drawer_background"
+        />
 
 </androidx.drawerlayout.widget.DrawerLayout>

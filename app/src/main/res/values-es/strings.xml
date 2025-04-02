@@ -89,5 +89,6 @@
     <string name="blue_flower">Flor Azul</string>
     <string name="paimon_ring">Anillo de Paimon</string>
     <string name="bottom_wave">Onda Inferior</string>
+    <string name="already_have_account">¿ Ya tienes una cuenta ? </string>
 
 </resources>

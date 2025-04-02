@@ -6,4 +6,5 @@
     android:textSize="16sp"
     android:textColor="@android:color/white"
     android:background="#88222222"
+    android:textAlignment="center"
     android:fontFamily="@font/lexend_regular"/>

@@ -1,16 +1,14 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Pressed -->
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
-            <solid android:color="#3B56D7"/> <!-- couleur un peu plus foncée -->
+            <solid android:color="#1A3DE6"/>
             <corners android:radius="24dp" />
         </shape>
     </item>
 
-    <!-- Default -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#3B56D7"/> <!-- BLEU Genshin ici -->
+            <solid android:color="#3552DB"/>
             <corners android:radius="24dp" />
         </shape>
     </item>

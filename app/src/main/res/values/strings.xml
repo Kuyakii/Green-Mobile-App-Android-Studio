@@ -121,4 +121,8 @@
     <string name="calendar">Calendar</string>
     <string name="book_a_slot">Book a Slot</string>
     <string name="about_us">About</string>
+    <string name="already_have_account">Already have an account ? </string>
+    <string name="button_back">← Retour</string>
+    <string name="next_week">Semaine suivante</string>
+    <string name="previous_week">Semaine précédente</string>
 </resources>
