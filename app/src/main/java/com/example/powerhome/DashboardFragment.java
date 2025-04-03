@@ -43,7 +43,7 @@ public class DashboardFragment extends Fragment {
     private void loadEcoCoins() {
         SessionManager session = new SessionManager(requireContext());
         int id = session.getId();
-        String url = "http://192.168.1.134/www/getResident.php?id=" + id;
+        String url = SessionManager.HOST + "/www/getResident.php?id=" + id;
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {

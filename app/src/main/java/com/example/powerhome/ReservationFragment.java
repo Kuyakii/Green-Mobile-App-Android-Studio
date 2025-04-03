@@ -92,7 +92,7 @@ public class ReservationFragment extends Fragment {
 
         int idResident = session.getId();
 
-        String url = "http://192.168.1.134/www/getHabitats.php?id_resident=" + idResident;
+        String url = SessionManager.HOST + "/www/getHabitats.php?id_resident=" + idResident;
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
