@@ -46,7 +46,7 @@ L'univers graphique et sonore est inspiré de *Genshin Impact*, rendant l’exp�
 
 1. Cloner le projet dans Android Studio.
 2. Modifier l'adresse IP dans `SessionManager.java` pour qu'elle corresponde à votre serveur PHP/MySQL local.
-3. Démarrer XAMPP et importer la base de données fournie dans phpMyAdmin. (voir en bas du README.md)
+3. Démarrer XAMPP et importer la base de données fournie dans phpMyAdmin. (residence_db.sql)
 4. Lancer l’application dans l’émulateur Android Studio ou sur un appareil réel.
 
 ---
