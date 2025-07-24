@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
 
         } else if (id == R.id.nav_logout) {
-            new AlertDialog.Builder(this)
+            new AlertDialog.Builder(this, R.style.CustomDialogTheme )
                     .setTitle(R.string.logout)
                     .setMessage(R.string.confirm_logout)
                     .setPositiveButton("Oui", (dialog, which) -> {

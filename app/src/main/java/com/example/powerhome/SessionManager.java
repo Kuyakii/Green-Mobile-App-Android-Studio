@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SessionManager {
-    public static final String HOST = "http://192.168.109.220";
+    public static final String HOST = "http://192.168.1.134"; // A changer
     private static final String PREF_NAME = "powerhome_session";
     private static final String KEY_ID = "id_resident";
     private static final String KEY_NOM = "nom";
